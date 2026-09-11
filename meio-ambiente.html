@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050a1e">
+  <meta name="description" content="Infraestrutura verde, ecologia urbana e iniciativas ambientais nas cidades.">
+  <title>Meio Ambiente — Urbanização</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cambo&family=Inter:wght@400;500;600;700;800&family=Kdam+Thmor+Pro&family=Kelly+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="inner-page" data-page="environment">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Urbanização — início">
+        <span class="brand-icon"><img src="assets/brand-city.png" alt=""></span>
+        <span><span>URBA</span>NIZAÇÃO</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span><span class="sr-only">Abrir menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <div class="nav-links">
+          <a data-nav="home" href="index.html">Início</a>
+          <a data-nav="project" href="index.html#projeto">Projeto</a>
+          <div class="topics-nav">
+            <button class="topics-toggle active" type="button" aria-expanded="false" aria-controls="topics-menu">Temas <span class="dropdown-chevron" aria-hidden="true"></span></button>
+            <div class="topics-menu" id="topics-menu">
+              <div class="topics-menu-head"><strong>Explore por tema</strong><span>Quatro caminhos para entender a vida urbana.</span></div>
+              <a aria-current="page" href="meio-ambiente.html"><span class="nav-topic-icon nav-topic-green"><img src="assets/theme-leaf.png" alt=""></span><span><strong>Meio Ambiente</strong><small>Ecologia e infraestrutura verde</small></span></a>
+              <a href="mobilidade.html"><span class="nav-topic-icon nav-topic-blue"><img src="assets/theme-bus.png" alt=""></span><span><strong>Mobilidade</strong><small>Transporte e conexões urbanas</small></span></a>
+              <a href="habitacao.html"><span class="nav-topic-icon nav-topic-orange"><img src="assets/theme-house.png" alt=""></span><span><strong>Habitação</strong><small>Moradia e direito à cidade</small></span></a>
+              <a href="cidades-inteligentes.html"><span class="nav-topic-icon nav-topic-purple"><img src="assets/brand-city.png" alt=""></span><span><strong>Desafios urbanos</strong><small>Problemas que pedem cidades inteligentes</small></span></a>
+            </div>
+          </div>
+          <a data-nav="articles" href="index.html#artigos">Artigos</a>
+          <a data-nav="companies" href="index.html#empresas">Empresas</a>
+        </div>
+        <a class="nav-game" data-nav="game" href="jogo.html">Jogar <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="topic-hero topic-green" aria-labelledby="page-title">
+      <div class="topic-hero-image"><img src="assets/pages/environment-hero.png" alt="Vegetação e infraestrutura verde em uma cidade"></div>
+      <div class="topic-hero-shade" aria-hidden="true"></div>
+      <div class="container topic-hero-content reveal">
+        <a class="back-link" href="index.html#temas">← Voltar aos temas</a>
+        <p class="section-number">01 — MEIO AMBIENTE</p>
+        <h1 id="page-title">Infraestrutura <span>Verde</span></h1>
+        <p>Quando natureza e planejamento caminham juntos, a cidade fica mais fresca, resiliente e saudável.</p>
+      </div>
+    </section>
+
+    <section class="topic-intro section-light">
+      <div class="container intro-grid">
+        <div class="intro-media reveal"><img src="assets/pages/environment-engineer.png" alt="Profissional analisando um projeto de infraestrutura verde"></div>
+        <div class="intro-copy reveal">
+          <p class="section-number">POR QUE IMPORTA</p>
+          <h2>Menos concreto.<br>Mais cidade viva.</h2>
+          <p>O planejamento urbano sustentável substitui parte do concreto por soluções que imitam processos naturais. Elas ajudam a controlar a água da chuva, reduzir o calor e devolver biodiversidade aos bairros.</p>
+          <div class="practice-list">
+            <article><span>01</span><div><h3>Parques e corredores ecológicos</h3><p>Conectam áreas verdes, refrescam bairros e criam espaços de lazer.</p></div></article>
+            <article><span>02</span><div><h3>Telhados verdes</h3><p>Isolam edifícios, absorvem parte da chuva e melhoram o microclima.</p></div></article>
+            <article><span>03</span><div><h3>Jardins de chuva</h3><p>Filtram o escoamento e reduzem a sobrecarga da drenagem urbana.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="initiative-section">
+      <div class="container">
+        <div class="section-heading inverse reveal">
+          <p class="section-number">INICIATIVAS</p>
+          <h2>O que já estão fazendo</h2>
+          <p>Exemplos de empresas que ligam mobilidade, resíduos e consumo a práticas ambientais.</p>
+        </div>
+        <div class="initiative-grid">
+          <article class="initiative-card reveal"><div class="initiative-logo"><img src="assets/pages/company-tembici.png" alt="Tembici"></div><span>MICROMOBILIDADE</span><h3>Tembici</h3><p>Incentiva deslocamentos de bicicleta e ajuda a reduzir emissões e congestionamentos.</p></article>
+          <article class="initiative-card reveal"><div class="initiative-logo"><img src="assets/pages/company-ambipar.png" alt="Ambipar"></div><span>GESTÃO DE RESÍDUOS</span><h3>Ambipar</h3><p>Atua com reciclagem, destinação correta de resíduos e compostagem de materiais orgânicos.</p></article>
+          <article class="initiative-card reveal"><div class="initiative-logo"><img src="assets/pages/company-natura.png" alt="Natura"></div><span>LOGÍSTICA REVERSA</span><h3>Natura</h3><p>Mantém pontos de coleta para que embalagens usadas retornem à cadeia de reaproveitamento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="references section-light">
+      <div class="container">
+        <div class="section-heading centered reveal"><p class="section-number">PARA CONTINUAR</p><h2>Referências</h2><p>Três leituras presentes no protótipo para aprofundar a relação entre sociedade e natureza.</p></div>
+        <div class="book-grid">
+          <article class="book-card reveal"><img src="assets/pages/book-silent-spring.png" alt="Capa de Primavera Silenciosa"><div><span>1962</span><h3>Primavera Silenciosa</h3><p>Rachel Carson</p></div></article>
+          <article class="book-card reveal"><img src="assets/pages/book-ecology.png" alt="Capa de História da Ecologia"><div><span>1990</span><h3>História da Ecologia</h3><p>Jean-Paul Deléage</p></div></article>
+          <article class="book-card reveal"><img src="assets/pages/book-krenak.png" alt="Capa de Ideias para Adiar o Fim do Mundo"><div><span>2019</span><h3>Ideias para Adiar o Fim do Mundo</h3><p>Ailton Krenak</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="topic-next" aria-label="Próximo tema">
+      <div class="container"><span>Próximo tema</span><a href="mobilidade.html">Mobilidade Urbana <strong aria-hidden="true">→</strong></a></div>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html"><span>URBA</span>NIZAÇÃO</a><p>Projeto educacional • UNASP • 2026</p><nav class="footer-links" aria-label="Links complementares"><a href="index.html#temas">Temas</a><a href="index.html#duvidas">Dúvidas</a><a href="index.html">Início ↑</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050a1e">
+  <meta name="description" content="Os desafios urbanos que cidades inteligentes precisam enfrentar: enchentes, mobilidade, moradia e calor.">
+  <title>Cidades Inteligentes — Urbanização</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cambo&family=Inter:wght@400;500;600;700;800&family=Kdam+Thmor+Pro&family=Kelly+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="inner-page" data-page="cities">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Urbanização — início"><span class="brand-icon"><img src="assets/brand-city.png" alt=""></span><span><span>URBA</span>NIZAÇÃO</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <div class="nav-links">
+          <a data-nav="home" href="index.html">Início</a><a data-nav="project" href="index.html#projeto">Projeto</a>
+          <div class="topics-nav">
+            <button class="topics-toggle active" type="button" aria-expanded="false" aria-controls="topics-menu">Temas <span class="dropdown-chevron" aria-hidden="true"></span></button>
+            <div class="topics-menu" id="topics-menu">
+              <div class="topics-menu-head"><strong>Explore por tema</strong><span>Quatro caminhos para entender a vida urbana.</span></div>
+              <a href="meio-ambiente.html"><span class="nav-topic-icon nav-topic-green"><img src="assets/theme-leaf.png" alt=""></span><span><strong>Meio Ambiente</strong><small>Ecologia e infraestrutura verde</small></span></a>
+              <a href="mobilidade.html"><span class="nav-topic-icon nav-topic-blue"><img src="assets/theme-bus.png" alt=""></span><span><strong>Mobilidade</strong><small>Transporte e conexões urbanas</small></span></a>
+              <a href="habitacao.html"><span class="nav-topic-icon nav-topic-orange"><img src="assets/theme-house.png" alt=""></span><span><strong>Habitação</strong><small>Moradia e direito à cidade</small></span></a>
+              <a aria-current="page" href="cidades-inteligentes.html"><span class="nav-topic-icon nav-topic-purple"><img src="assets/brand-city.png" alt=""></span><span><strong>Desafios urbanos</strong><small>Problemas que pedem cidades inteligentes</small></span></a>
+            </div>
+          </div>
+          <a data-nav="articles" href="index.html#artigos">Artigos</a><a data-nav="companies" href="index.html#empresas">Empresas</a>
+        </div>
+        <a class="nav-game" data-nav="game" href="jogo.html">Jogar <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="topic-hero topic-purple challenge-hero" aria-labelledby="page-title">
+      <div class="challenge-collage" aria-hidden="true">
+        <img src="assets/pages/challenge-flood.png" alt=""><img src="assets/pages/challenge-transit.png" alt=""><img src="assets/pages/challenge-rent.png" alt=""><img src="assets/pages/challenge-heat.png" alt="">
+      </div>
+      <div class="topic-hero-shade" aria-hidden="true"></div>
+      <div class="container topic-hero-content reveal">
+        <a class="back-link" href="index.html#temas">← Voltar aos temas</a>
+        <p class="section-number">04 — CIDADES INTELIGENTES</p>
+        <h1 id="page-title">Inteligentes para <span>quem?</span></h1>
+        <p>Antes da tecnologia, uma cidade inteligente precisa reconhecer problemas reais e melhorar a vida de quem vive nela.</p>
+      </div>
+    </section>
+
+    <section class="challenge-section section-light">
+      <div class="container">
+        <div class="section-heading reveal"><p class="section-number">MAIORES CASOS</p><h2>Quatro desafios urgentes</h2><p>Planejamento, infraestrutura e políticas públicas se cruzam em cada um desses problemas.</p></div>
+        <div class="challenge-grid">
+          <article class="challenge-card reveal"><div class="challenge-image"><img src="assets/pages/challenge-flood.png" alt="Rua alagada após chuva forte"><span>01</span></div><div><p class="story-kicker">ENCHENTES</p><h3>Quando a cidade não absorve a chuva</h3><p>A impermeabilização do solo e a drenagem insuficiente fazem a água se acumular rapidamente em ruas e bairros.</p><a href="meio-ambiente.html">Ver soluções ambientais →</a></div></article>
+          <article class="challenge-card reveal"><div class="challenge-image"><img src="assets/pages/challenge-transit.png" alt="Ônibus em um corredor urbano"><span>02</span></div><div><p class="story-kicker">MOBILIDADE</p><h3>Transporte público em colapso</h3><p>Empregos concentrados e periferias distantes sobrecarregam linhas e aumentam o tempo perdido nos deslocamentos.</p><a href="mobilidade.html">Entender mobilidade →</a></div></article>
+          <article class="challenge-card reveal"><div class="challenge-image"><img src="assets/pages/challenge-rent.png" alt="Análise de preços de imóveis"><span>03</span></div><div><p class="story-kicker">HABITAÇÃO</p><h3>Crise do aluguel e especulação</h3><p>A valorização sem proteção social torna regiões inacessíveis e pode expulsar moradores de longa data.</p><a href="habitacao.html">Entender habitação →</a></div></article>
+          <article class="challenge-card reveal"><div class="challenge-image"><img src="assets/pages/challenge-heat.png" alt="Termômetro marcando temperatura elevada"><span>04</span></div><div><p class="story-kicker">CLIMA URBANO</p><h3>Ilhas de calor e ar poluído</h3><p>Concreto, vidro, pouca vegetação e emissões dos veículos elevam temperaturas e pioram a qualidade do ar.</p><a href="meio-ambiente.html">Conhecer infraestrutura verde →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic-summary topic-summary-purple"><div class="container summary-grid reveal"><p class="section-number">A IDEIA CENTRAL</p><blockquote>Tecnologia é ferramenta. Inteligência urbana é usar dados, planejamento e participação para resolver necessidades humanas.</blockquote><a class="primary-button" href="jogo.html">Aprender jogando <span aria-hidden="true">→</span></a></div></section>
+    <nav class="topic-next" aria-label="Próximo conteúdo"><div class="container"><span>Continue explorando</span><a href="jogo.html">Jogo educativo <strong aria-hidden="true">→</strong></a></div></nav>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html"><span>URBA</span>NIZAÇÃO</a><p>Projeto educacional • UNASP • 2026</p><nav class="footer-links" aria-label="Links complementares"><a href="index.html#temas">Temas</a><a href="index.html#duvidas">Dúvidas</a><a href="index.html">Início ↑</a></nav></div></footer>
+</body>
+</html>

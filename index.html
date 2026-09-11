@@ -1,264 +1,353 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="stript.js" defer></script>
-    <title>Urbanização</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050a1e">
+  <meta name="description" content="Urbanização: um projeto educacional sobre cidades, mobilidade, habitação e meio ambiente.">
+  <title>Urbanização — Entendendo as cidades</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cambo&family=Inter:wght@400;500;600;700;800&family=Kdam+Thmor+Pro&family=Kelly+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
-    <nav class="menu">
-        <h1><span>URBA</span>NIZAÇÃO</h1>
-        
-        <button class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#quem-somos">Cotidiano</a></li>
-            <li><a href="#solucoes">Artigos</a></li>
-            <li><a href="#clientes">Empresas</a></li>
-            <li><a href="#problemas-urbanos">Problemas</a></li>
-            <li><a href="#faq">Duvidas</a></li>
-            <li><a href="#jogo">Jogo</a></li>
-        </ul>   
-    </nav>
+<body data-page="home">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <section class="intro" id="home">
-        <div class="intro-content">
-            <div class="icon-global">
-                <img src="./image/icon-global.png" alt="icon-global">
-            </div>
-            <h1>O que é urbanização?</h1>
-            
-            <p class="intro-p">A urbanização é o processo em que a população das cidades cresce em um ritmo muito maior do que a população do campo. </p>
-            <p class="intro-p2">Embora a urbanização traga desenvolvimento econômico e maior acesso a serviços modernos, ela também pode gerar desafios severos, especialmente quando ocorre de forma rápida e sem planejamento.</p>
-            
-        </div>
-        <img class="intro-img" src="./image/cidade-roxa.png" alt="Uma cidade com luz roxa">
-    </section>   
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Urbanização — início">
+        <span class="brand-icon"><img src="assets/brand-city.png" alt=""></span>
+        <span><span>URBA</span>NIZAÇÃO</span>
+      </a>
 
-    <section class="quem-somos" id="quem-somos">
-        <div class="icon-chapeu">
-            <img src="./imgpagina2/chapeu-de-graduacao 1.svg" alt="icon-chapeu">
-        </div>
-        <div class="quem-somos-text">
-            <h1>HISTÓRIA DA URBANIZAÇÃO</h1>
-            <h2>A urbanização teve início com a Revolução Agrícola, quando a humanidade deixou de ser nômade para cultivar a terra. Essa mudança permitiu que as pessoas se fixassem em um único lugar, gerando o surgimento das primeiras cidades na antiguidade.</h2>
-            <h2 class="h2-final">O processo se acelerou de forma drástica com a Revolução Industrial no século XVIII. A enorme necessidade de trabalhadores para as fábricas provocou um intenso êxodo rural, esvaziando o campo e transformando definitivamente o mundo em uma sociedade urbana.</h2>
-        </div>
-        <div class="quem-somos-img">
-            <img src="./image/cidade com praia.png" alt="cidade com priaia">
-        </div>
-    </section>
-    
-    <section class="Nossas-soluções" id="solucoes">
-        <div class="solucoes-header">
-            <h1>Urbanização no cotidiano</h1>
-            <p>As três grandes áreas de estudo</p>
-        </div>
-        
-        <div class="solucoes-grid">
-            <a href="./pagina2.html">
-                <button class="solucao-card">
-                    <img src="./image/icon-folha.png" alt="icon-folha">
-                    <h3>Meio Ambiente</h3>
-                    <p>Como as cidades lidam com resíduos, arborização, ilhas de calor e mudanças climáticas.</p>
-                </button>
-            </a>
-                            
-            <div class="solucao-card">
-                <a href="">
-                    <img src="./image/icon-transport.png" alt="icon-transport">
-                    <h3>Mobilidade Urbana</h3>
-                    <p>Entenda como funcionam os Planos Diretores, o zoneamento, a gentrificação e o direito à moradia.</p>
-                </a>
-            </div>
-            
-            <div class="solucao-card">
-                <a href="">
-                    <img src="./image/icon-home.png" alt="InsulinAPP UTI">
-                    <h3>Habitação</h3>
-                    <p>Entenda como funcionam os Planos Diretores, o zoneamento, a gentrificação e o direito à moradia.</p>
-                </a>
-            </div>
-        </div>
-    </section>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
 
-    <section class="recursos-essenciais" id="recursos">
-        <h1>Recursos essenciais</h1>
-        <p class="p-intro">Veja o quanto os nossos sistemas podem ajudar a sua equipe</p>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+        <div class="nav-links">
+          <a class="active" data-nav="home" href="#inicio">Início</a>
+          <a data-nav="project" href="#projeto">Projeto</a>
 
-        <div class="carousel">
-            <div class="carousel-inner" id="carouselInner">
-                <!-- Slide 1 -->
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="icon-box">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3>O Processo de Urbanização no Brasil</h3>
-                        <p>Este artigo aborda como ocorreu a urbanização brasileira, especialmente a partir da industrialização no século XX. Analisa o crescimento das cidades, o êxodo rural e os impactos sociais e econômicos desse processo.</p>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="icon-box">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Segurança</h3>
-                        <p>Nossas soluções estão disponíveis através de Datacenters seguros e monitorados em território nacional. Rotinas de segurança automatizadas.</p>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="icon-box">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <h3>Atualização tecnológica</h3>
-                        <p>Sua instituição sempre com a versão mais recente e atualizada. Libere tempo, recursos e profissionais para as atividades-fim da instituição.</p>
-                    </div>
-                </div>
-
-                <!-- Slide 4 -->
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="icon-box">
-                            <i class="fas fa-globe-americas"></i>
-                        </div>
-                        <h3>Acessibilidade</h3>
-                        <p>O acesso as nossas soluções pode ser realizado de qualquer lugar a qualquer momento, sem a necessidade da instalação de aplicativos nos computadores da instituição.</p>
-                    </div>
-                </div>
-
-                <!-- Slide 5 -->
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="icon-box">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Acompanhamento</h3>
-                        <p>Acompanhe as informações de seus pacientes de qualquer lugar, com segurança e praticidade através de smartphones e tablets.</p>
-                    </div>
-                </div>
-            </div>
-        
-            <button class="carousel-btn prev" id="prevBtn">‹</button>
-            <button class="carousel-btn next" id="nextBtn">›</button>
-        
-            <div class="carousel-indicators" id="indicators"></div>
-        </div>
-    </section>
-
-    <section class="quem-utiliza" id="clientes">
-        <h1>Empresas que atuam com Urbanização</h1>
-
-        <div class="clientes">
-            <div class="cliente-card"><img src="./image/alphaville.png" alt="Cliente 1"></div>
-            <div class="cliente-card"><img src="./image/urba.jpg" alt="Cliente 2"></div>
-            <div class="cliente-card"><img src="./image/josan.png" alt="Cliente 3"></div>
-            <div class="cliente-card"><img src="./image/terrapar.png" alt="Cliente 4"></div>
-            <div class="cliente-card"><img src="./image/3 empressas.png" alt="Cliente 5"></div>
-            <div class="cliente-card"><img src="./image/skaf.png" alt="Cliente 6"></div>
-            <div class="cliente-card"><img src="./image/quantum.png" alt="Cliente 7"></div>
-            <div class="cliente-card"><img src="./image/grupo zs.png" alt="Cliente 8"></div>
-            <div class="cliente-card"><img src="./image/glebatec.png" alt="Cliente 9"></div>
-            <div class="cliente-card"><img src="./image/ctz.png" alt="Cliente 10"></div>
-        </div>
-    </section>
-
-    <div class="problemas-urbanos" id="problemas-urbanos">
-        <h2 class="problemas-title">Problemas urbanos</h2>
-
-        <div class="cards-wrapper">
-            <div class="card">
-                <img src="./image/onibus com pessoas.png" alt="Estação de transporte público lotada">
-                <h3>Saturação dos Serviços Públicos:</h3>
-                <p>O aumento repentino da população urbana sobrecarrega a infraestrutura básica da cidade. Isso resulta em hospitais lotados, escolas sem vagas suficientes.</p>
-            </div>
-
-            <div class="card">
-                <img src="./image/todo professoe de geo já passou essa foto.png" alt="Favela vista de cima">
-                <h3>Desigualdade e Favelização:</h3>
-                <p>Quando o crescimento da cidade não é acompanhado pela criação de moradias com preços acessíveis, muitas pessoas de baixa renda são empurradas para áreas periféricas ou de risco.</p>
-            </div>
-        </div>
-
-        <button class="btn-saiba-mais">Saiba Mais</button>
-    </div>    
-
-    <h1 class="titolo-faq" id="faq">Perguntas Frequentes</h1>
-
-    <div class="faq-container">
-        <div class="faq-item">
-            <button class="faq-question">
-                Qual a diferença entre urbanização e crescimento urbano?
-                <i class="fas fa-chevron-down"></i>
+          <div class="topics-nav">
+            <button class="topics-toggle" type="button" aria-expanded="false" aria-controls="topics-menu">
+              Temas <span class="dropdown-chevron" aria-hidden="true"></span>
             </button>
-            <div class="faq-answer">
-                <p>Urbanização é a população trocando o campo pela cidade; Crescimento Urbano é a cidade ficando maior.</p>
+            <div class="topics-menu" id="topics-menu">
+              <div class="topics-menu-head">
+                <strong>Explore por tema</strong>
+                <span>Quatro caminhos para entender a vida urbana.</span>
+              </div>
+              <a href="meio-ambiente.html">
+                <span class="nav-topic-icon nav-topic-green"><img src="assets/theme-leaf.png" alt=""></span>
+                <span><strong>Meio Ambiente</strong><small>Ecologia e infraestrutura verde</small></span>
+              </a>
+              <a href="mobilidade.html">
+                <span class="nav-topic-icon nav-topic-blue"><img src="assets/theme-bus.png" alt=""></span>
+                <span><strong>Mobilidade</strong><small>Transporte e conexões urbanas</small></span>
+              </a>
+              <a href="habitacao.html">
+                <span class="nav-topic-icon nav-topic-orange"><img src="assets/theme-house.png" alt=""></span>
+                <span><strong>Habitação</strong><small>Moradia e direito à cidade</small></span>
+              </a>
+              <a href="cidades-inteligentes.html">
+                <span class="nav-topic-icon nav-topic-purple"><img src="assets/brand-city.png" alt=""></span>
+                <span><strong>Desafios urbanos</strong><small>Problemas que pedem cidades inteligentes</small></span>
+              </a>
             </div>
-        </div>
+          </div>
 
-        <div class="faq-item">
-            <button class="faq-question">
-                O que é gentrificação?
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-                <p>O bairro melhora fisicamente, mas a população original é substituída por moradores de maior poder aquisitivo.</p>
-            </div>
+          <a data-nav="articles" href="#artigos">Artigos</a>
+          <a data-nav="companies" href="#empresas">Empresas</a>
         </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                A urbanização tem volta?
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-                <p>Não dá para acabar com a urbanização, apenas para descentralizar as metrópoles e valorizar o campo com mais serviços, infraestrutura e tecnologia.</p>
-            </div>
-        </div>
+        <a class="nav-game" data-nav="game" href="jogo.html">Jogar <span aria-hidden="true">→</span></a>
+      </nav>
     </div>
+  </header>
 
-    <section class="form-section" id="jogo">
-        <div class="form-container">
-            <h1>Jogo</h1>
-            
-            <div class="game-layout">
-                <div class="main-image">
-                    <img src="./image/menu jogo.png" alt="menu do jogo">
-                </div>
-                
-                <div class="side-content">
-                    <div class="controles">
-                        <img src="./image/como jogar.png" alt="Como jogar">
-                    </div>
-                    
-                    <a class="play" href="">
-                        <img src="./image/botao jogar.png" alt="Jogar Agora">
-                    </a>
-                </div>
-            </div>
-        </div>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo" aria-hidden="true">
+        <img src="assets/hero-city.png" alt="">
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <img class="hero-globe" src="assets/globe.png" alt="" aria-hidden="true">
+
+      <div class="hero-content container reveal">
+        <p class="eyebrow">CIDADE • SOCIEDADE • FUTURO</p>
+        <h1 id="hero-title">Entendendo as Cidades:<br><span>O Futuro da Urbanização.</span></h1>
+        <p class="hero-lead">Plataforma digital para a análise e o manejo da infraestrutura em cidades com alto crescimento populacional.</p>
+        <p class="hero-copy">Auxiliamos cidadãos, estudantes e gestores na compreensão de soluções urbanas sustentáveis e personalizadas. Nossos conteúdos são baseados em estudos urbanísticos e evidências científicas.</p>
+        <a class="primary-button" href="#temas">Explorar temas <span aria-hidden="true">→</span></a>
+      </div>
+
+      <a class="scroll-cue" href="#projeto" aria-label="Ir para a próxima seção">
+        <span>Descubra</span>
+        <i aria-hidden="true"></i>
+      </a>
     </section>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p>Heitor Trujillo Nagy</p>
-            <p>Kauã Argolo Guilherme Oliveira</p>
-            <p>Jefferson Alvez de Santos</p>
-            <p>Nicolas Pereira Viana</p>
+    <section class="about" id="projeto" aria-labelledby="about-title">
+      <div class="about-map" aria-hidden="true"><img src="assets/about-earth.png" alt=""></div>
+      <div class="about-shape about-shape-one" aria-hidden="true"></div>
+      <div class="about-shape about-shape-two" aria-hidden="true"></div>
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="section-number">02 — PROJETO</p>
+          <h2 id="about-title">Sobre o Projeto</h2>
+          <p>Somos um portal de divulgação científica e jornalismo urbano. Acreditamos que a cidade pertence a todos e, por isso, traduzimos conceitos complexos de arquitetura, engenharia viária e ecologia em conteúdos acessíveis.</p>
+          <p>Nosso objetivo é democratizar o debate sobre o espaço público, estimulando soluções inteligentes para os desafios habitacionais e climáticos do nosso século.</p>
+          <div class="about-points" aria-label="Pilares do projeto">
+            <span>Informação acessível</span>
+            <span>Fontes confiáveis</span>
+            <span>Análise urbana</span>
+          </div>
         </div>
-    </footer>
+        <div class="about-caption reveal">
+          <span>UM PLANETA</span>
+          <strong>MILHARES DE CIDADES</strong>
+          <p>Cada território cresce de um jeito. Entender essas diferenças é o primeiro passo para planejar melhor.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="themes section-light" id="temas" aria-labelledby="themes-title">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="section-number">03 — TEMAS</p>
+          <h2 id="themes-title">Nossos Temas</h2>
+          <p>As quatro grandes áreas de estudo que ajudam a compreender o funcionamento das cidades.</p>
+        </div>
+
+        <div class="theme-grid">
+          <article class="theme-card theme-green reveal">
+            <div class="theme-icon"><img src="assets/theme-leaf.png" alt=""></div>
+            <div class="theme-watermark">AMBIENTE</div>
+            <h3>Meio Ambiente</h3>
+            <p>Como as cidades lidam com resíduos, arborização, ilhas de calor e mudanças climáticas.</p>
+            <a href="meio-ambiente.html">Abrir <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="theme-card theme-blue reveal">
+            <div class="theme-icon"><img src="assets/theme-bus.png" alt=""></div>
+            <div class="theme-watermark">MOVIMENTO</div>
+            <h3>Mobilidade Urbana</h3>
+            <p>Transporte público, infraestrutura viária, ciclovias e os desafios do trânsito nas metrópoles.</p>
+            <a href="mobilidade.html">Abrir <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="theme-card theme-orange reveal">
+            <div class="theme-icon"><img src="assets/theme-house.png" alt=""></div>
+            <div class="theme-watermark">MORADIA</div>
+            <h3>Habitação</h3>
+            <p>Planos Diretores, zoneamento, gentrificação e o direito à moradia nas áreas urbanas.</p>
+            <a href="habitacao.html">Abrir <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="theme-card theme-purple reveal">
+            <div class="theme-icon"><img src="assets/brand-city.png" alt=""></div>
+            <div class="theme-watermark">TECNOLOGIA</div>
+            <h3>Cidades Inteligentes</h3>
+            <p>Tecnologia, dados e infraestrutura conectada para tornar as cidades mais eficientes e humanas.</p>
+            <a href="cidades-inteligentes.html">Abrir <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="articles dark-flow" id="artigos" aria-labelledby="articles-title">
+      <div class="container">
+        <div class="section-topline reveal">
+          <div>
+            <p class="section-number">04 — ARTIGOS</p>
+            <h2 id="articles-title">Artigos</h2>
+          </div>
+          <div class="carousel-controls" aria-label="Controles dos artigos">
+            <button class="carousel-button" type="button" data-carousel="prev" aria-label="Artigos anteriores">←</button>
+            <button class="carousel-button" type="button" data-carousel="next" aria-label="Próximos artigos">→</button>
+          </div>
+        </div>
+
+        <div class="article-track" tabindex="0" aria-label="Lista de artigos">
+          <article class="article-card reveal">
+            <div class="article-index">01</div>
+            <div class="article-icon-shell"><img src="assets/article-01.png" alt=""></div>
+            <p class="article-tag">HISTÓRIA URBANA</p>
+            <h3>O Processo de Urbanização no Brasil</h3>
+            <p>Como industrialização, êxodo rural e crescimento populacional transformaram as cidades brasileiras no século XX.</p>
+            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-index">02</div>
+            <div class="article-icon-shell"><img src="assets/article-02.png" alt=""></div>
+            <p class="article-tag">MEIO AMBIENTE</p>
+            <h3>Impactos da Urbanização no Meio Ambiente</h3>
+            <p>Expansão urbana, impermeabilização do solo, poluição e ilhas de calor explicadas de forma direta.</p>
+            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-index">03</div>
+            <div class="article-icon-shell"><img src="assets/theme-house.png" alt=""></div>
+            <p class="article-tag">SOCIEDADE</p>
+            <h3>Urbanização e Desigualdade Social</h3>
+            <p>Déficit habitacional, segregação socioespacial e o acesso desigual aos serviços públicos.</p>
+            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-index">04</div>
+            <div class="article-icon-shell"><img src="assets/theme-bus.png" alt=""></div>
+            <p class="article-tag">MOBILIDADE</p>
+            <h3>Mobilidade Urbana e Crescimento das Cidades</h3>
+            <p>Transporte coletivo, ciclovias e alternativas sustentáveis para melhorar a circulação de pessoas.</p>
+            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-index">05</div>
+            <div class="article-icon-shell"><img src="assets/brand-city.png" alt=""></div>
+            <p class="article-tag">TECNOLOGIA</p>
+            <h3>Cidades Inteligentes e Urbanização Sustentável</h3>
+            <p>Como dados e tecnologia podem contribuir para uma cidade eficiente e voltada à qualidade de vida.</p>
+            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="companies dark-flow" id="empresas" aria-labelledby="companies-title">
+      <div class="container">
+        <div class="section-heading centered inverse reveal">
+          <p class="section-number">05 — EMPRESAS</p>
+          <h2 id="companies-title">Empresas que atuam com Urbanização</h2>
+          <p>Organizações ligadas à construção, mobilidade, planejamento e transformação dos espaços urbanos.</p>
+        </div>
+
+        <div class="logo-grid reveal" aria-label="Logotipos de empresas">
+          <div><img src="assets/logo-01.png" alt="Empresa 1"></div>
+          <div><img src="assets/logo-02.png" alt="Empresa 2"></div>
+          <div><img src="assets/logo-03.png" alt="Empresa 3"></div>
+          <div><img src="assets/logo-04.png" alt="Empresa 4"></div>
+          <div><img src="assets/logo-05.png" alt="Empresa 5"></div>
+          <div><img src="assets/logo-06.png" alt="Empresa 6"></div>
+          <div><img src="assets/logo-07.png" alt="Empresa 7"></div>
+          <div><img src="assets/logo-08.png" alt="Empresa 8"></div>
+          <div><img src="assets/logo-09.png" alt="Empresa 9"></div>
+          <div><img src="assets/logo-10.png" alt="Empresa 10"></div>
+        </div>
+
+        <div class="featured-companies reveal">
+          <h3>Maiores Empresas</h3>
+          <div class="featured-grid">
+            <article class="company-card company-alpha">
+              <div class="company-logo"><img src="assets/alpha.png" alt="Alphaville Urbanismo"></div>
+              <p>A Alphaville é uma das maiores empresas de urbanização do Brasil e foi pioneira em bairros planejados e condomínios horizontais. Atua há mais de 40 anos e está presente em mais de 20 estados.</p>
+            </article>
+            <article class="company-card company-urba">
+              <div class="company-logo"><img src="assets/urba.png" alt="Urba"></div>
+              <p>A Urba é a empresa de desenvolvimento urbano da MRV&amp;CO. Criada em 2012, atua com loteamentos e bairros planejados mais acessíveis.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq section-light" id="duvidas" aria-labelledby="faq-title">
+      <div class="container faq-wrap">
+        <div class="section-heading centered reveal">
+          <p class="section-number">06 — DÚVIDAS</p>
+          <h2 id="faq-title">Dúvidas</h2>
+          <p>Respostas rápidas para conceitos que aparecem ao longo do projeto.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false"><span>O que é gentrificação?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><p>É o processo de valorização de uma região que aumenta o custo de vida e pode afastar os moradores que já viviam ali.</p></div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false"><span>Para que serve o Plano Diretor de uma cidade?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><p>Ele orienta o crescimento urbano e define regras para moradia, transporte, infraestrutura e uso do solo.</p></div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false"><span>Qual a diferença entre espaço público e espaço privado?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><p>O espaço público é destinado ao uso coletivo; o privado pertence a pessoas ou organizações e tem acesso definido por seus responsáveis.</p></div>
+          </article>
+          <article class="faq-item">
+            <h3><button type="button" aria-expanded="false"><span>O que caracteriza uma Cidade Inteligente?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-answer"><p>É uma cidade que usa planejamento, tecnologia e dados para melhorar serviços, sustentabilidade e qualidade de vida.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-section" id="jogo" aria-labelledby="game-title">
+      <div class="container">
+        <div class="game-heading reveal">
+          <p class="section-number">07 — EXPERIÊNCIA INTERATIVA</p>
+          <h2 id="game-title">Memória da Globalização</h2>
+          <p>Aprenda sobre conexões globais encontrando os pares corretos.</p>
+        </div>
+
+        <div class="game-showcase reveal">
+          <div class="game-main"><img src="assets/game-main.png" alt="Jogo da Memória sobre globalização"></div>
+          <div class="game-side">
+            <div><img src="assets/game-side-top.png" alt="Cartas e temas do jogo"></div>
+            <a class="game-cta" href="jogo.html">Jogar agora <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team" id="equipe" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="section-number">08 — EQUIPE</p>
+          <h2 id="team-title">Perfil</h2>
+          <p>Projeto desenvolvido por estudantes para tornar o debate urbano mais acessível.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="member reveal">
+            <div class="member-photo"><img src="assets/team-heitor.png" alt="Heitor Trujillo Nagy"></div>
+            <h3>Heitor Trujillo Nagy</h3>
+            <p>Conteúdo e pesquisa</p>
+          </article>
+          <article class="member reveal">
+            <div class="member-photo"><img src="assets/team-kaua.png" alt="Kauã Argolo Guilherme Oliveira"></div>
+            <h3>Kauã Argolo Guilherme Oliveira</h3>
+            <p>Design e desenvolvimento</p>
+          </article>
+          <article class="member reveal">
+            <div class="member-photo"><img src="assets/team-jefferson.png" alt="Jefferson Alvez de Santos"></div>
+            <h3>Jefferson Alvez de Santos</h3>
+            <p>Conteúdo e pesquisa</p>
+          </article>
+          <article class="member reveal">
+            <div class="member-photo"><img src="assets/team-nicolas.png" alt="Nicolas Pereira Viana"></div>
+            <h3>Nicolas Pereira Viana</h3>
+            <p>Conteúdo e pesquisa</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio"><span>URBA</span>NIZAÇÃO</a>
+      <p>Projeto educacional • UNASP • 2026</p>
+      <nav class="footer-links" aria-label="Links complementares">
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#inicio">Voltar ao início ↑</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
