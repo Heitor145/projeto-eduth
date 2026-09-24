@@ -15,7 +15,7 @@
 <body data-page="home">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="site-header" id="inicio">
+  <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#inicio" aria-label="Urbanização — início">
         <span class="brand-icon"><img src="assets/brand-city.png" alt=""></span>
@@ -69,7 +69,7 @@
   </header>
 
   <main id="conteudo">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero-photo" aria-hidden="true">
         <img src="assets/hero-city.png" alt="">
       </div>
@@ -125,6 +125,7 @@
         <div class="theme-grid">
           <article class="theme-card theme-green reveal">
             <div class="theme-icon"><img src="assets/theme-leaf.png" alt=""></div>
+            <img class="theme-watermark-icon" src="assets/theme-leaf.png" alt="" aria-hidden="true">
             <div class="theme-watermark">AMBIENTE</div>
             <h3>Meio Ambiente</h3>
             <p>Como as cidades lidam com resíduos, arborização, ilhas de calor e mudanças climáticas.</p>
@@ -133,6 +134,7 @@
 
           <article class="theme-card theme-blue reveal">
             <div class="theme-icon"><img src="assets/theme-bus.png" alt=""></div>
+            <img class="theme-watermark-icon" src="assets/theme-bus.png" alt="" aria-hidden="true">
             <div class="theme-watermark">MOVIMENTO</div>
             <h3>Mobilidade Urbana</h3>
             <p>Transporte público, infraestrutura viária, ciclovias e os desafios do trânsito nas metrópoles.</p>
@@ -141,6 +143,7 @@
 
           <article class="theme-card theme-orange reveal">
             <div class="theme-icon"><img src="assets/theme-house.png" alt=""></div>
+            <img class="theme-watermark-icon" src="assets/theme-house.png" alt="" aria-hidden="true">
             <div class="theme-watermark">MORADIA</div>
             <h3>Habitação</h3>
             <p>Planos Diretores, zoneamento, gentrificação e o direito à moradia nas áreas urbanas.</p>
@@ -149,6 +152,7 @@
 
           <article class="theme-card theme-purple reveal">
             <div class="theme-icon"><img src="assets/brand-city.png" alt=""></div>
+            <img class="theme-watermark-icon" src="assets/brand-city.png" alt="" aria-hidden="true">
             <div class="theme-watermark">TECNOLOGIA</div>
             <h3>Cidades Inteligentes</h3>
             <p>Tecnologia, dados e infraestrutura conectada para tornar as cidades mais eficientes e humanas.</p>
@@ -178,7 +182,6 @@
             <p class="article-tag">HISTÓRIA URBANA</p>
             <h3>O Processo de Urbanização no Brasil</h3>
             <p>Como industrialização, êxodo rural e crescimento populacional transformaram as cidades brasileiras no século XX.</p>
-            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="article-card reveal">
@@ -187,7 +190,6 @@
             <p class="article-tag">MEIO AMBIENTE</p>
             <h3>Impactos da Urbanização no Meio Ambiente</h3>
             <p>Expansão urbana, impermeabilização do solo, poluição e ilhas de calor explicadas de forma direta.</p>
-            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="article-card reveal">
@@ -196,7 +198,6 @@
             <p class="article-tag">SOCIEDADE</p>
             <h3>Urbanização e Desigualdade Social</h3>
             <p>Déficit habitacional, segregação socioespacial e o acesso desigual aos serviços públicos.</p>
-            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="article-card reveal">
@@ -205,7 +206,6 @@
             <p class="article-tag">MOBILIDADE</p>
             <h3>Mobilidade Urbana e Crescimento das Cidades</h3>
             <p>Transporte coletivo, ciclovias e alternativas sustentáveis para melhorar a circulação de pessoas.</p>
-            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="article-card reveal">
@@ -214,8 +214,11 @@
             <p class="article-tag">TECNOLOGIA</p>
             <h3>Cidades Inteligentes e Urbanização Sustentável</h3>
             <p>Como dados e tecnologia podem contribuir para uma cidade eficiente e voltada à qualidade de vida.</p>
-            <a href="#artigos">Ler artigo <span aria-hidden="true">↗</span></a>
           </article>
+        </div>
+        <div class="carousel-meta" aria-hidden="true">
+          <span class="carousel-line"><i data-carousel-progress></i></span>
+          <span data-carousel-counter>01–03 / 05</span>
         </div>
       </div>
     </section>
@@ -290,15 +293,56 @@
       <div class="container">
         <div class="game-heading reveal">
           <p class="section-number">07 — EXPERIÊNCIA INTERATIVA</p>
-          <h2 id="game-title">Memória da Globalização</h2>
-          <p>Aprenda sobre conexões globais encontrando os pares corretos.</p>
+          <h2 id="game-title">Urbanização em Movimento</h2>
+          <p>Conduza uma população em crescimento e teste seus conhecimentos sobre as cidades.</p>
         </div>
 
         <div class="game-showcase reveal">
-          <div class="game-main"><img src="assets/game-main.png" alt="Jogo da Memória sobre globalização"></div>
+          <div class="game-main">
+            <div class="urban-game-preview" aria-label="Prévia não interativa do jogo Urbanização">
+              <div class="urban-preview-head">
+                <div class="urban-preview-title">
+                  <span class="urban-preview-mark" aria-hidden="true">U</span>
+                  <div><p>JOGO EDUCATIVO</p><h3>Urbanização</h3></div>
+                </div>
+                <span class="urban-preview-badge">PRÉVIA</span>
+              </div>
+
+              <div class="urban-preview-layout">
+                <div class="urban-preview-board" aria-hidden="true">
+                  <div class="urban-preview-earth"></div>
+                  <span class="urban-preview-person person-one">●</span>
+                  <span class="urban-preview-person person-two">●</span>
+                  <span class="urban-preview-person person-three">●</span>
+                  <span class="urban-preview-person person-four">●</span>
+                  <span class="urban-preview-food">◆</span>
+                  <span class="urban-preview-population">População: 04</span>
+                </div>
+                <div class="urban-preview-panel">
+                  <p class="urban-preview-kicker">DESAFIO URBANO</p>
+                  <h4>Cresça sem perder o rumo.</h4>
+                  <p>Ao atingir um limite, responda corretamente a uma pergunta para continuar.</p>
+                  <div class="urban-preview-answers" aria-hidden="true">
+                    <span>Verdadeiro</span><span>Falso</span>
+                  </div>
+                </div>
+              </div>
+              <p class="urban-preview-note"><span aria-hidden="true">●</span> Prévia visual — o jogo abre em uma página própria</p>
+            </div>
+          </div>
           <div class="game-side">
-            <div><img src="assets/game-side-top.png" alt="Cartas e temas do jogo"></div>
-            <a class="game-cta" href="jogo.html">Jogar agora <span aria-hidden="true">→</span></a>
+            <div class="game-guide">
+              <div class="game-guide-heading">
+                <span class="game-guide-icon"><img src="assets/brand-city.png" alt=""></span>
+                <div><p>COMO JOGAR</p><h3>Movimente, cresça, responda.</h3></div>
+              </div>
+              <ol>
+                <li><span>01</span><p>Use as setas ou WASD para se mover</p></li>
+                <li><span>02</span><p>Colete recursos e aumente a população</p></li>
+                <li><span>03</span><p>Supere colisões respondendo ao quiz</p></li>
+              </ol>
+            </div>
+            <a class="game-cta" href="jogo.html">Abrir o jogo <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
@@ -316,22 +360,18 @@
           <article class="member reveal">
             <div class="member-photo"><img src="assets/team-heitor.png" alt="Heitor Trujillo Nagy"></div>
             <h3>Heitor Trujillo Nagy</h3>
-            <p>Conteúdo e pesquisa</p>
           </article>
           <article class="member reveal">
             <div class="member-photo"><img src="assets/team-kaua.png" alt="Kauã Argolo Guilherme Oliveira"></div>
-            <h3>Kauã Argolo Guilherme Oliveira</h3>
-            <p>Design e desenvolvimento</p>
+            <h3>Kauã Oliveira</h3>
           </article>
           <article class="member reveal">
             <div class="member-photo"><img src="assets/team-jefferson.png" alt="Jefferson Alvez de Santos"></div>
             <h3>Jefferson Alvez de Santos</h3>
-            <p>Conteúdo e pesquisa</p>
           </article>
           <article class="member reveal">
             <div class="member-photo"><img src="assets/team-nicolas.png" alt="Nicolas Pereira Viana"></div>
             <h3>Nicolas Pereira Viana</h3>
-            <p>Conteúdo e pesquisa</p>
           </article>
         </div>
       </div>
@@ -339,15 +379,21 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="brand" href="#inicio"><span>URBA</span>NIZAÇÃO</a>
-      <p>Projeto educacional • UNASP • 2026</p>
-      <nav class="footer-links" aria-label="Links complementares">
-        <a href="#duvidas">Dúvidas</a>
-        <a href="#equipe">Equipe</a>
-        <a href="#inicio">Voltar ao início ↑</a>
+    <div class="container footer-main">
+      <div class="footer-identity">
+        <a class="brand footer-brand" href="#inicio" aria-label="Urbanização — início">
+          <span class="brand-icon"><img src="assets/brand-city.png" alt=""></span>
+          <span><span>URBA</span>NIZAÇÃO</span>
+        </a>
+        <p>Conteúdo acessível para entender como as cidades crescem, mudam e afetam o nosso cotidiano.</p>
+      </div>
+      <nav class="footer-navigation" aria-label="Navegação do rodapé">
+        <div><strong>Explorar</strong><a href="#inicio">Início</a><a href="#projeto">Projeto</a><a href="#artigos">Artigos</a></div>
+        <div><strong>Temas</strong><a href="meio-ambiente.html">Meio Ambiente</a><a href="mobilidade.html">Mobilidade</a><a href="habitacao.html">Habitação</a><a href="cidades-inteligentes.html">Cidades Inteligentes</a></div>
+        <div><strong>Projeto</strong><a href="#empresas">Empresas</a><a href="#duvidas">Dúvidas</a><a href="#equipe">Equipe</a><a href="jogo.html">Jogo</a></div>
       </nav>
     </div>
+    <div class="container footer-bottom"><p>Projeto educacional • UNASP • 2026</p><a href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a></div>
   </footer>
 </body>
 </html>

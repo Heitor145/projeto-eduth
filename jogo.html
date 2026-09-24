@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050a1e">
-  <meta name="description" content="Jogo educativo de memória sobre urbanização e globalização.">
-  <title>Jogo da Memória — Urbanização</title>
+  <meta name="description" content="Jogo educativo de urbanização com movimento, crescimento populacional e quiz.">
+  <title>Urbanização em Movimento — Jogo educativo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cambo&family=Inter:wght@400;500;600;700;800&family=Kdam+Thmor+Pro&family=Kelly+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="game.js" defer></script>
 </head>
 <body class="inner-page" data-page="game">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -39,39 +40,79 @@
   </header>
 
   <main id="conteudo">
-    <section class="game-page-hero">
+    <section class="game-page-hero" aria-labelledby="game-page-title">
       <div class="container game-page-grid">
         <div class="game-page-copy reveal">
           <a class="back-link" href="index.html#jogo">← Voltar para a Home</a>
           <p class="section-number">EXPERIÊNCIA INTERATIVA</p>
-          <h1>Memória da <span>Globalização</span></h1>
-          <p>Encontre cada conceito e sua explicação. São quatro pares para testar o que você aprendeu sobre a vida urbana.</p>
-          <a class="primary-button" href="#partida">Começar partida <span aria-hidden="true">↓</span></a>
+          <h1 id="game-page-title">Urbanização <span>em Movimento</span></h1>
+          <p>Guie uma população em crescimento pelo mapa. Colete recursos e, quando encontrar um limite, acerte uma pergunta sobre urbanização para continuar.</p>
+          <a class="primary-button" href="#partida">Ir para o tabuleiro <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="game-page-preview reveal"><img src="assets/game-main.png" alt="Prévia visual do jogo da memória"></div>
-      </div>
-    </section>
+        <div class="game-page-preview reveal" id="partida">
+          <div class="urban-game" data-urban-game tabindex="0" role="region" aria-labelledby="urban-game-title">
+            <div class="urban-game-head">
+              <div class="urban-game-title">
+                <span class="urban-game-mark" aria-hidden="true">U</span>
+                <div><p>JOGO EDUCATIVO</p><h2 id="urban-game-title">Urbanização</h2></div>
+              </div>
+              <div class="urban-game-stats" aria-label="Placar da partida">
+                <div><span>População</span><strong data-urban-population>01</strong></div>
+                <div><span>Recorde</span><strong data-urban-best>01</strong></div>
+                <div><span>Quiz</span><strong data-urban-correct>00</strong></div>
+              </div>
+            </div>
 
-    <section class="memory-section" id="partida" aria-labelledby="memory-title">
-      <div class="container memory-wrap">
-        <div class="memory-head reveal">
-          <div><p class="section-number">PARTIDA</p><h2 id="memory-title">Encontre os pares</h2><p>Selecione duas cartas. Combine o conceito com a definição correspondente.</p></div>
-          <div class="memory-actions"><p id="game-status" aria-live="polite">0 de 4 pares</p><button id="restart-game" type="button">Reiniciar</button></div>
-        </div>
-        <div class="memory-grid" aria-label="Cartas do jogo da memória">
-          <button class="memory-card" type="button" data-pair="urbanizacao"><span class="memory-back">?</span><span class="memory-face"><small>CONCEITO</small><strong>Urbanização</strong></span></button>
-          <button class="memory-card" type="button" data-pair="mobilidade"><span class="memory-back">?</span><span class="memory-face"><small>DEFINIÇÃO</small><strong>Como pessoas e bens se deslocam pela cidade</strong></span></button>
-          <button class="memory-card" type="button" data-pair="ambiente"><span class="memory-back">?</span><span class="memory-face"><small>CONCEITO</small><strong>Infraestrutura verde</strong></span></button>
-          <button class="memory-card" type="button" data-pair="globalizacao"><span class="memory-back">?</span><span class="memory-face"><small>DEFINIÇÃO</small><strong>Integração econômica, cultural e tecnológica entre territórios</strong></span></button>
-          <button class="memory-card" type="button" data-pair="mobilidade"><span class="memory-back">?</span><span class="memory-face"><small>CONCEITO</small><strong>Mobilidade urbana</strong></span></button>
-          <button class="memory-card" type="button" data-pair="urbanizacao"><span class="memory-back">?</span><span class="memory-face"><small>DEFINIÇÃO</small><strong>Crescimento das cidades e da população urbana</strong></span></button>
-          <button class="memory-card" type="button" data-pair="globalizacao"><span class="memory-back">?</span><span class="memory-face"><small>CONCEITO</small><strong>Globalização</strong></span></button>
-          <button class="memory-card" type="button" data-pair="ambiente"><span class="memory-back">?</span><span class="memory-face"><small>DEFINIÇÃO</small><strong>Soluções naturais integradas ao planejamento urbano</strong></span></button>
+            <div class="urban-game-layout">
+              <div class="urban-game-board">
+                <canvas id="urban-game-canvas" width="400" height="400" aria-label="Tabuleiro do jogo Urbanização">Seu navegador não oferece suporte ao canvas.</canvas>
+              </div>
+
+              <div class="urban-game-panel">
+                <div class="urban-game-status">
+                  <i aria-hidden="true"></i>
+                  <span><small>STATUS</small><strong data-urban-status>Aguardando</strong></span>
+                </div>
+                <div class="urban-game-actions">
+                  <button class="urban-game-primary" type="button" data-urban-start>Jogar</button>
+                  <button class="urban-game-secondary" type="button" data-urban-reset disabled>Reiniciar</button>
+                </div>
+                <div class="urban-game-dpad" aria-label="Controles de direção">
+                  <button class="urban-up" type="button" data-urban-direction="up" aria-label="Mover para cima"><span aria-hidden="true">↑</span></button>
+                  <button class="urban-left" type="button" data-urban-direction="left" aria-label="Mover para a esquerda"><span aria-hidden="true">←</span></button>
+                  <button class="urban-down" type="button" data-urban-direction="down" aria-label="Mover para baixo"><span aria-hidden="true">↓</span></button>
+                  <button class="urban-right" type="button" data-urban-direction="right" aria-label="Mover para a direita"><span aria-hidden="true">→</span></button>
+                </div>
+                <div class="urban-game-quiz-actions" data-urban-quiz-actions hidden>
+                  <p>Escolha uma resposta</p>
+                  <div><button type="button" data-urban-answer="true">Verdadeiro</button><button type="button" data-urban-answer="false">Falso</button></div>
+                </div>
+                <p class="urban-game-hint">Setas/WASD • V ou F no quiz</p>
+              </div>
+            </div>
+            <p class="sr-only" data-urban-live aria-live="polite"></p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="index.html"><span>URBA</span>NIZAÇÃO</a><p>Projeto educacional • UNASP • 2026</p><nav class="footer-links" aria-label="Links complementares"><a href="index.html#temas">Temas</a><a href="index.html#duvidas">Dúvidas</a><a href="index.html">Início ↑</a></nav></div></footer>
+  <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-identity">
+          <a class="brand footer-brand" href="index.html" aria-label="Urbanização — início">
+            <span class="brand-icon"><img src="assets/brand-city.png" alt=""></span>
+            <span><span>URBA</span>NIZAÇÃO</span>
+          </a>
+          <p>Conteúdo acessível para entender como as cidades crescem, mudam e afetam o nosso cotidiano.</p>
+        </div>
+        <nav class="footer-navigation" aria-label="Navegação do rodapé">
+          <div><strong>Explorar</strong><a href="index.html">Início</a><a href="index.html#projeto">Projeto</a><a href="index.html#artigos">Artigos</a></div>
+          <div><strong>Temas</strong><a href="meio-ambiente.html">Meio Ambiente</a><a href="mobilidade.html">Mobilidade</a><a href="habitacao.html">Habitação</a><a href="cidades-inteligentes.html">Cidades Inteligentes</a></div>
+          <div><strong>Projeto</strong><a href="index.html#empresas">Empresas</a><a href="index.html#duvidas">Dúvidas</a><a href="index.html#equipe">Equipe</a><a href="jogo.html">Jogo</a></div>
+        </nav>
+      </div>
+      <div class="container footer-bottom"><p>Projeto educacional • UNASP • 2026</p><a href="#conteudo">Voltar ao topo <span aria-hidden="true">↑</span></a></div>
+    </footer>
 </body>
 </html>

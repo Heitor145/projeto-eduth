@@ -76,8 +76,11 @@ document.querySelectorAll('.faq-item button').forEach((button) => {
 });
 
 const articleTrack = document.querySelector('.article-track');
+const carouselButtons = [...document.querySelectorAll('[data-carousel]')];
+const carouselProgress = document.querySelector('[data-carousel-progress]');
+const carouselCounter = document.querySelector('[data-carousel-counter]');
 
-document.querySelectorAll('[data-carousel]').forEach((button) => {
+carouselButtons.forEach((button) => {
   button.addEventListener('click', () => {
     if (!articleTrack) return;
     const card = articleTrack.querySelector('.article-card');
@@ -87,6 +90,49 @@ document.querySelectorAll('[data-carousel]').forEach((button) => {
     articleTrack.scrollBy({ left: direction * distance, behavior: 'smooth' });
   });
 });
+
+const updateArticleCarousel = () => {
+  if (!articleTrack) return;
+  const cards = [...articleTrack.querySelectorAll('.article-card')];
+  const firstCard = cards[0];
+  if (!firstCard) return;
+
+  const styles = window.getComputedStyle(articleTrack);
+  const gap = Number.parseFloat(styles.columnGap || styles.gap) || 24;
+  const cardWidth = firstCard.getBoundingClientRect().width;
+  const step = cardWidth + gap;
+  const maxScroll = Math.max(0, articleTrack.scrollWidth - articleTrack.clientWidth);
+  const normalizedScroll = maxScroll > 0 ? articleTrack.scrollLeft / maxScroll : 0;
+  const visibleCards = Math.max(1, Math.min(cards.length, Math.round((articleTrack.clientWidth + gap) / step)));
+  const firstVisible = Math.min(cards.length - visibleCards, Math.max(0, Math.round(articleTrack.scrollLeft / step)));
+  const lastVisible = Math.min(cards.length, firstVisible + visibleCards);
+
+  if (carouselCounter) {
+    const formatIndex = (value) => String(value).padStart(2, '0');
+    carouselCounter.textContent = `${formatIndex(firstVisible + 1)}–${formatIndex(lastVisible)} / ${formatIndex(cards.length)}`;
+  }
+
+  if (carouselProgress) {
+    const indicatorWidth = Math.min(100, Math.max(18, (articleTrack.clientWidth / articleTrack.scrollWidth) * 100));
+    carouselProgress.style.width = `${indicatorWidth}%`;
+    carouselProgress.style.left = `${normalizedScroll * (100 - indicatorWidth)}%`;
+  }
+
+  carouselButtons.forEach((button) => {
+    const isPrevious = button.dataset.carousel === 'prev';
+    button.disabled = isPrevious ? articleTrack.scrollLeft <= 2 : articleTrack.scrollLeft >= maxScroll - 2;
+  });
+};
+
+let carouselFrame = 0;
+const queueCarouselUpdate = () => {
+  window.cancelAnimationFrame(carouselFrame);
+  carouselFrame = window.requestAnimationFrame(updateArticleCarousel);
+};
+
+articleTrack?.addEventListener('scroll', queueCarouselUpdate, { passive: true });
+window.addEventListener('resize', queueCarouselUpdate);
+queueCarouselUpdate();
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealItems = document.querySelectorAll('.reveal');
@@ -117,7 +163,7 @@ if (page === 'game') {
   setActiveNavigation('game');
 } else if (['environment', 'mobility', 'housing', 'cities'].includes(page)) {
   setActiveNavigation('themes');
-} else if (page === 'home' && 'IntersectionObserver' in window) {
+} else if (page === 'home') {
   const sectionMap = {
     inicio: 'home',
     projeto: 'project',
@@ -125,92 +171,25 @@ if (page === 'game') {
     artigos: 'articles',
     empresas: 'companies'
   };
-  const sections = [...document.querySelectorAll('main section[id], header[id]')];
-  const activeSectionObserver = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  const sections = [...document.querySelectorAll('main section[id]')]
+    .filter((section) => sectionMap[section.id]);
+  let navigationFrame = 0;
 
-    if (!visible) return;
-    const activeName = sectionMap[visible.target.id];
-    if (activeName) setActiveNavigation(activeName);
-  }, { rootMargin: '-34% 0px -56% 0px', threshold: [0, 0.05, 0.15] });
+  const updateActiveSection = () => {
+    const probe = window.scrollY + Math.max((header?.offsetHeight || 0) + 24, window.innerHeight * .38);
+    const currentSection = sections.reduce((current, section) => (
+      section.offsetTop <= probe ? section : current
+    ), sections[0]);
 
-  sections.forEach((section) => activeSectionObserver.observe(section));
+    if (currentSection) setActiveNavigation(sectionMap[currentSection.id]);
+  };
+
+  const queueNavigationUpdate = () => {
+    window.cancelAnimationFrame(navigationFrame);
+    navigationFrame = window.requestAnimationFrame(updateActiveSection);
+  };
+
+  window.addEventListener('scroll', queueNavigationUpdate, { passive: true });
+  window.addEventListener('resize', queueNavigationUpdate);
+  queueNavigationUpdate();
 }
-
-const memoryCards = [...document.querySelectorAll('.memory-card')];
-const restartButton = document.querySelector('#restart-game');
-const gameStatus = document.querySelector('#game-status');
-let firstCard = null;
-let secondCard = null;
-let boardLocked = false;
-let matchedPairs = 0;
-
-const updateGameStatus = () => {
-  if (!gameStatus) return;
-  gameStatus.textContent = matchedPairs === 4
-    ? '4 de 4 pares — partida concluída!'
-    : `${matchedPairs} de 4 pares`;
-};
-
-const resetTurn = () => {
-  firstCard = null;
-  secondCard = null;
-  boardLocked = false;
-};
-
-const checkMemoryPair = () => {
-  if (!firstCard || !secondCard) return;
-  const isMatch = firstCard.dataset.pair === secondCard.dataset.pair;
-
-  if (isMatch) {
-    firstCard.classList.add('matched');
-    secondCard.classList.add('matched');
-    firstCard.disabled = true;
-    secondCard.disabled = true;
-    matchedPairs += 1;
-    updateGameStatus();
-    resetTurn();
-    return;
-  }
-
-  boardLocked = true;
-  window.setTimeout(() => {
-    firstCard?.classList.remove('flipped');
-    secondCard?.classList.remove('flipped');
-    resetTurn();
-  }, 850);
-};
-
-memoryCards.forEach((card) => {
-  card.addEventListener('click', () => {
-    if (boardLocked || card === firstCard || card.classList.contains('matched')) return;
-    card.classList.add('flipped');
-
-    if (!firstCard) {
-      firstCard = card;
-      return;
-    }
-
-    secondCard = card;
-    checkMemoryPair();
-  });
-});
-
-const restartMemoryGame = () => {
-  matchedPairs = 0;
-  resetTurn();
-  memoryCards
-    .map((card) => ({ card, order: Math.random() }))
-    .sort((a, b) => a.order - b.order)
-    .forEach(({ card }, index) => {
-      card.classList.remove('flipped', 'matched');
-      card.disabled = false;
-      card.style.order = String(index);
-    });
-  updateGameStatus();
-};
-
-restartButton?.addEventListener('click', restartMemoryGame);
-if (memoryCards.length) restartMemoryGame();
